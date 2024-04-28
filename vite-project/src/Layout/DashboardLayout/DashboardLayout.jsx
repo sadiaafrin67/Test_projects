@@ -1,13 +1,9 @@
 import { useState } from "react";
-// import { Outlet } from "react-router-dom";
-// import DashNav from "./DashShared/DashNav/DashNav";
-// import './DashShared/SideBar/SideBar.css'
-// import SideBar from "./DashShared/SideBar/SideBar";
-// import ToTop from "../MainLayout/Shared/ToTop/ToTop";
+
 import { Helmet } from "react-helmet";
 import { Outlet } from "react-router-dom";
-import DashNav from "../DashNav/DashNav";
-import Sidebar from "../Sidebar/Sidebar";
+import DashNav from "../../components/DashNav/DashNav";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 const DashboardLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -37,11 +33,8 @@ const DashboardLayout = () => {
           }`}
         >
           <DashNav toggleSidebar={toggleSidebar}></DashNav>
-          <div className="flex-1">
+          <div className="flex-1 py-4 px-8 text-secondary-foreground">
             <Outlet></Outlet>
-            <div className="fixed z-[99999] right-8 bottom-12">
-              {/* <ToTop></ToTop> */}
-            </div>
           </div>
         </div>
       </div>
